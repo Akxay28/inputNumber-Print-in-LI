@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map - Function</title>
+</head>
+
+<body>
+    <form id="form" onsubmit="submitLoginForm(event)">
+        <h1>Please enter data</h1>
+        <input type="number" name="number" id="input1">
+        <input type="submit" onclick="storeInput();" value="Add">
+    </form>
+
+    <ul id="myList"></ul>
+
+</body>
+
+</html>
+<script>
+
+    var inputArray = [];
+    function submitLoginForm(event) {
+        event.preventDefault();
+        // console.log(event.target['number'].value);
+        document.getElementById("form").reset();
+    };
+
+    function storeInput() {
+        const inputvalue = document.getElementById("input1").value;
+        inputArray.push(inputvalue);
+        console.log(inputArray);
+
+        var y = document.getElementById("myList");
+        var z = document.createElement("li");
+        z.innerHTML = inputvalue
+        y.appendChild(z);
+        
+        var Z = z.addEventListener("click", function () {
+            z.remove("li");
+        });
+    };
+
+</script>
